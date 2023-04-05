@@ -58,13 +58,17 @@ public class Main {
             return Integer.toString(numbers[n-1]) + " " + findReverse(n-1, numbers);
         }
     }
+    static boolean isAllNumbers(String text) {
+        if (text.length() == 1) {
+            return Character.isDigit(text.charAt(0));
+        }
+        else {
+            return Character.isDigit(text.charAt(0)) && isAllNumbers(text.substring(1));
+        }
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int[] numbers = new int[n];
-        for (int i = 0; i < n; i++) {
-            numbers[i] = sc.nextInt();
-        }
-        System.out.println(findReverse(n, numbers));
+        String text = sc.nextLine();
+        System.out.println(isAllNumbers(text));
     }
 }
