@@ -42,9 +42,18 @@ public class Main {
             return findFib(n-1) + findFib(n-2);
         }
     }
+    static int findPow(int a, int n) {
+        if (n == 1) {
+            return a;
+        }
+        else {
+            return a * findPow(a, n-1);
+        }
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
         int n = sc.nextInt();
-        System.out.println(findFib(n));
+        System.out.println(findPow(a, n));
     }
 }
