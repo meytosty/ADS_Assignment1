@@ -26,9 +26,17 @@ public class Main {
         }
         return d == 1;
     }
+    static int findFact(int n) {
+        if (n == 1) {
+            return 1;
+        }
+        else {
+            return n * findFact(n-1);
+        }
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        System.out.println(isNumberPrime(n));
+        System.out.println(findFact(n));
     }
 }
