@@ -34,9 +34,17 @@ public class Main {
             return n * findFact(n-1);
         }
     }
+    static int findFib(int n) {
+        if (n == 1 || n == 2) {
+            return 1;
+        }
+        else {
+            return findFib(n-1) + findFib(n-2);
+        }
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        System.out.println(findFact(n));
+        System.out.println(findFib(n));
     }
 }
