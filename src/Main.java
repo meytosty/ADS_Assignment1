@@ -17,13 +17,18 @@ public class Main {
         }
         return total / n;
     }
+    static boolean isNumberPrime(int n) {
+        int d = 0;
+        for (int i = 1; i < n; i++) {
+            if (n % i == 0) {
+                d++;
+            }
+        }
+        return d == 1;
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int[] nums = new int[n];
-        for (int i = 0; i < n; i++) {
-            nums[i] = sc.nextInt();
-        }
-        System.out.println(findAverage(n, nums));
+        System.out.println(isNumberPrime(n));
     }
 }
