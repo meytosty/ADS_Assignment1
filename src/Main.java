@@ -50,10 +50,21 @@ public class Main {
             return a * findPow(a, n-1);
         }
     }
+    static String findReverse(int n, int[] numbers) {
+        if (n == 1) {
+            return Integer.toString(numbers[0]);
+        }
+        else {
+            return Integer.toString(numbers[n-1]) + " " + findReverse(n-1, numbers);
+        }
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
         int n = sc.nextInt();
-        System.out.println(findPow(a, n));
+        int[] numbers = new int[n];
+        for (int i = 0; i < n; i++) {
+            numbers[i] = sc.nextInt();
+        }
+        System.out.println(findReverse(n, numbers));
     }
 }
